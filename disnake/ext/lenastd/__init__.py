@@ -14,18 +14,18 @@ __all__ = ("app_command_id",)
 if TYPE_CHECKING:
     from typing_extensions import TypeAlias
 
-    InvokableSlashCommand: TypeAlias = """
+    InvokableSlashCommand: TypeAlias = """(
         commands.InvokableSlashCommand
         | commands.SubCommand
         | commands.SubCommandGroup
-    """
+    )"""
 
-    InvokableAppCommand: TypeAlias = """
+    InvokableAppCommand: TypeAlias = """(
         InvokableSlashCommand
         | commands.InvokableMessageCommand
         | commands.InvokableUserCommand
         | commands.InvokableApplicationCommand
-    """
+    )"""
 
 
 def app_command_id(
